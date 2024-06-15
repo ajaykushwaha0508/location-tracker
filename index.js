@@ -11,9 +11,19 @@ if(!navigator.geolocation){
     } ,3000)
 }
 
+
+
 var marker;
 var circle ;
 var count = 0;
+
+const mylocationbtn = document.getElementById("btn");
+
+mylocationbtn.addEventListener("click" , ()=>{
+    count = 0;
+})
+
+
 function getPosition(position){
     const lati = position.coords.latitude;
     const long = position.coords.longitude;
@@ -32,7 +42,10 @@ function getPosition(position){
           circle = L.circle([lati ,long] , {radius : 30});
 
         var featureGroup = L.featureGroup([marker , circle]).addTo(map);
+        if(count==0){
             map.fitBounds(featureGroup.getBounds()); 
+            count++;
+        }
     }
 
 
