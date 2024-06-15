@@ -8,7 +8,7 @@ if(!navigator.geolocation){
     setInterval(()=>{       
         navigator.geolocation.getCurrentPosition(getPosition);
         console.log("interval run ")
-    } ,500)
+    } ,10000)
 }
 
 
@@ -21,6 +21,7 @@ const mylocationbtn = document.getElementById("btn");
 
 mylocationbtn.addEventListener("click" , ()=>{
     count = 0;
+    navigator.geolocation.getCurrentPosition(getPosition);
 })
 
 
