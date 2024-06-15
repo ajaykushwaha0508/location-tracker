@@ -5,6 +5,7 @@ var map = L.map('map').setView([51.505, -0.09], 17); // lotitute , longitude , z
 if(!navigator.geolocation){
     console.log("browser doest support geolocation");
 }else{
+    navigator.geolocation.getCurrentPosition(getPosition);
     setInterval(()=>{       
         navigator.geolocation.getCurrentPosition(getPosition);
         console.log("interval run ")
