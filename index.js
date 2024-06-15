@@ -8,7 +8,7 @@ if(!navigator.geolocation){
     setInterval(()=>{       
         navigator.geolocation.getCurrentPosition(getPosition);
         console.log("interval run ")
-    } ,3000)
+    } ,500)
 }
 
 
