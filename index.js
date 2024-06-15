@@ -13,6 +13,7 @@ if(!navigator.geolocation){
 
 var marker;
 var circle ;
+var count = 0;
 function getPosition(position){
     const lati = position.coords.latitude;
     const long = position.coords.longitude;
@@ -28,10 +29,13 @@ function getPosition(position){
         if(circle) {map.removeLayer(circle)};
         
         marker = L.marker([lati , long]);
-          circle = L.circle([lati ,long] , {radius : acc});
+          circle = L.circle([lati ,long] , {radius : 30});
 
-       var featureGroup = L.featureGroup([marker , circle]).addTo(map);
-    //    map.fitBounds(featureGroup.getBounds()); 
-}
+        var featureGroup = L.featureGroup([marker , circle]).addTo(map);
+        if(count==0){
+            map.fitBounds(featureGroup.getBounds()); 
+            count++;
+        }
+    }
 
 
