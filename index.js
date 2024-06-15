@@ -32,10 +32,7 @@ function getPosition(position){
           circle = L.circle([lati ,long] , {radius : 30});
 
         var featureGroup = L.featureGroup([marker , circle]).addTo(map);
-        if(count==0){
             map.fitBounds(featureGroup.getBounds()); 
-            count++;
-        }
     }
 
 
