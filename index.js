@@ -1,4 +1,4 @@
-var map = L.map('map').setView([51.505, -0.09], 17); // lotitute , longitude , zoom level
+var map = L.map('map').setView([51.505, -0.09], 6); // lotitute , longitude , zoom level
 
 
 
@@ -33,7 +33,7 @@ function getPosition(position){
     
 
      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-         maxZoom: 19,
+         maxZoom: 16,
          attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         }).addTo(map);
         
